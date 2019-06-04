@@ -16,6 +16,11 @@ source 'https://rubygems.org'
 # Project requirements
 gem 'rake'
 
+gem 'padrino-sprockets', :require => ['padrino/sprockets'],
+  :git => 'git://github.com/nightsailer/padrino-sprockets.git'
+gem 'uglifier', '2.1.1'
+gem 'yui-compressor', '0.9.6'
+
 # Component requirements
 gem 'erubi', '~> 1.6'
 gem 'activerecord', '>= 3.1', :require => 'active_record'

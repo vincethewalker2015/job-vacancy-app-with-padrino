@@ -27,8 +27,12 @@ gem 'activerecord', '>= 3.1', :require => 'active_record'
 gem 'sqlite3'
 
 # Test requirements
-gem 'rspec', :group => 'test'
-gem 'rack-test', :require => 'rack/test', :group => 'test'
+group :test do
+  gem 'rspec', '2.13.0'
+  gem 'factory_girl', '4.2.0'
+  gem 'rack-test', :require => 'rack/test'
+end
+
 
 # Padrino Stable Gem
 gem 'padrino', '0.14.4'

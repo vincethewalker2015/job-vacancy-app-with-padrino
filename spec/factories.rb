@@ -1,9 +1,10 @@
 # encoding: utf-8
 FactoryGirl.define do
-
+    sequence(:email){ |n| "vincent.walker#{n}@padrinobook.com"}
     factory :user do
       name "Vincent Walker"
-      email "contact@vincethewalker.com"
+      email 
+      password "foo"
     end
 
     factory :job_offer do

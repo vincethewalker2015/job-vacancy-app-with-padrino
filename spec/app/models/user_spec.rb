@@ -5,7 +5,9 @@ require 'spec_helper'
 #end
 
 describe "User Model" do
-  let(:user) { User.new }
+  let(:user) { FactoryGirl.build(:user) }
+  let(:job_offer) { {:title => 'Padrino Engineer', :location => 'Berlin',
+    :description => 'Come to this great place'} }
 
   it 'can be created' do
     expect(user).not_to be_nil
@@ -16,12 +18,12 @@ describe "User Model" do
   end
 
   it 'have job-offers' do
-    user.job_offers.build(job_offer)
+    user.job_offers.build(FactoryGirl.attributes_for(:job_offer))
     expect(user.job_offers.size).to eq 1
   end
 
   it 'has job-offers' do
-    user.job_offers.build(attributes_for(:job_offer))
+    user.job_offers.build(FactoryGirl.attributes_for(:job_offer))
     expect(user.job_offers.size).to eq 1
   end
 
